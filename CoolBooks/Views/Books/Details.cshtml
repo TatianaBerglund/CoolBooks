@@ -1,0 +1,29 @@
+﻿@model CoolBooks.Models.Books
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+    @*<h5>@Html.DisplayFor(model => model.Genres.Name)</h5>*@
+    <div>
+        <h3>@Html.DisplayFor(model => model.Title)</h3>by @Html.DisplayFor(model => model.Authors.FirstName) @Html.DisplayFor(model => model.Authors.LastName)
+    </div>
+    <br />
+    <img alt="List View" src="~/images/@Html.DisplayFor(model => model.ImagePath)" style="height:140px;width:100px;" />
+    <div>
+        <h5><b>@Html.DisplayName("Description")</b></h5>
+        @Html.DisplayFor(model => model.Description)
+    </div>
+    <br />
+    <div>
+        <b>@Html.DisplayName("ISBN") @Html.DisplayFor(model => model.ISBN)</b>
+    </div>
+    <br />
+    <hr />
+    <div>
+        <b> @Html.DisplayName("Published")</b> @Html.DisplayFor(model => model.PublishDate)
+    </div>
+
+</div>
+<div class="clear"></div>

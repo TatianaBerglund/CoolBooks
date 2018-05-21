@@ -1,0 +1,9 @@
+﻿
+@foreach (var item in ViewData["Genres"] as IEnumerable<CoolBooks.Models.Genres>)
+{
+    <li>
+        @Html.ActionLink(item.Name.ToString(), "GenreBooks","Genres", new { id = item.Id },null)
+        
+        
+    </li>
+}

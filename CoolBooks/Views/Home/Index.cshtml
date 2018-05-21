@@ -1,0 +1,23 @@
+﻿@*@model IEnumerable<CoolBooks.Models.Books>*@
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div>
+
+    <div class="row">
+        @foreach (var item in ViewData["books"] as IEnumerable<CoolBooks.Models.Books>)
+        {
+            <div class="col-xs-6 col-md-3">
+                <a href="@Url.Action("Details", "Books", new { id = @item.Id })" title="List View">
+                    <img alt="List View" src="~/images/@item.ImagePath" style="height:140px;width:100px;" />
+                </a>
+                <h5>@item.Title</h5>
+                <br />
+            </div>
+
+
+        }
+    </div>
+</div>
+<div class="clear"></div>
